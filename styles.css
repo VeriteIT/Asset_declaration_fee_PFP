@@ -15,7 +15,7 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 470px;
     width: 100%;
 }
 
@@ -37,12 +37,13 @@ label {
 }
 
 input {
-    width: calc(100% - 10px);
+    width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    box-sizing: border-box;
 }
 
 button {
@@ -63,22 +64,38 @@ button:hover {
 
 #result {
     margin-top: 20px;
-    text-align: left; /* Align the text to the left */
+    text-align: left;
 }
 
 #result p {
-    margin: 0;
-    padding: 0;
+    margin: 10px 0;
+}
+
+#result.visible {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+#errorMessage {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
 }
 
 #fee {
     font-weight: bold;
-    color: #28a745;
+    color: green;
+    font-style: italic;
 }
 
 #currency {
     font-weight: bold;
-    color: #28a745;
+    color: red;
+    font-style: italic;
 }
 
 canvas {
