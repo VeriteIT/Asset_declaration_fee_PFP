@@ -10,13 +10,17 @@
 <body>
     <div class="container">
         <h1>Late Fee Calculator</h1>
+
+        <!-- Error message box -->
+        <div id="errorMessage" class="hidden" style="color: red; font-weight: bold;"></div>
+
         <div class="input-group">
             <label for="submissionDate">Date of Submission:</label>
-            <input type="date" id="submissionDate">
+            <input type="date" id="submissionDate" autocomplete="off">
         </div>
         <div class="input-group">
             <label for="grossSalary">Monthly Gross Salary (LKR):</label>
-            <input type="number" id="grossSalary" placeholder="e.g. 150000">
+            <input type="number" id="grossSalary" placeholder="e.g. 150000" autocomplete="off">
         </div>
         <div class="input-group">
             <label for="deadline">Deadline for Submission:</label>
@@ -24,9 +28,9 @@
         </div>
         <button onclick="calculateFee()">Calculate Fee</button>
         
-        <div id="result">
-            <p><strong>Minimum Administrative Late Fee Payable:</strong> <span id="fee" style="color: #28a745;"></span>  <span id="currency">LKR</span></p>
-            <p><small><strong>The minimum late fee payable is <span id="multiple">______</span> times the Declarant's monthly gross salary.</strong></small></p>
+        <div id="result" class="hidden">
+            <p><strong>Minimum Administrative Late Fee Payable:</strong> <span id="currency" style="color: red; font-style: italic;">LKR</span> <span id="fee" style="color: green; font-style: italic;"></span></p>
+            <p><small><strong>The minimum late fee payable is <span id="multiple" style="font-style: italic;">- </span> times the Declarant's monthly gross salary.</strong></small></p>
         </div>
 
         <canvas id="feeChart" width="400" height="200"></canvas>
